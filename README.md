@@ -1,7 +1,3 @@
-Claro — vou montar um README bonito, bem estruturado e fácil de entender com base no que você disse. Vou organizar em tópicos e deixar com um tom profissional, mas acolhedor. Olha só:
-
----
-
 # 📚 Exercícios de C++ — 42 School
 
 Este repositório é dedicado aos **exercícios de C++ realizados durante o curso na 42 School**. Ele foi criado com o objetivo de organizar, documentar e compartilhar soluções que possam auxiliar outros estudantes e interessados na linguagem C++.
@@ -26,10 +22,10 @@ Aqui você encontrará diversos exercícios propostos durante o aprendizado, org
 ## 📂 Estrutura do Repositório
 
 ```
-📁 cpp_exercises_42/
- ┣ 📁 module_00/
- ┣ 📁 module_01/
- ┣ 📁 module_02/
+📁 MODULES CPP/
+ ┣ 📁 CPP-Module-00/
+ ┣ 📁 CPP-Module-01/
+ ┣ 📁 CPP-Module-02/
  ┣ 📁 ...
  ┣ 📄 README.md
 ```
@@ -51,8 +47,7 @@ Sinta-se à vontade para:
 
 Se quiser trocar ideias, tirar dúvidas ou colaborar, estou à disposição!
 
-- 📧 Email: [seuemail@exemplo.com]
-- 📱 LinkedIn: [seulinkedin.com/in/seunome]
+- 📧 Email: [desmalldev@gmail.com]
 
 ---
 
