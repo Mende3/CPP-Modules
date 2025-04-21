@@ -1,5 +1,8 @@
-NAME = harl2.0
-SRC = main.cpp
+NAME = Unnecessary_violence
+SRC = main.cpp \
+		Weapon.cpp \
+		HumanA.cpp \
+		HumanB.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra
