@@ -12,6 +12,13 @@
 
 #include "Contact.hpp"
 
+Contact::Contact() : id(0), nbr(""), Fname(""), Lname(""), Nname(""), Dsecret("") {}
+
+Contact::Contact(int idx, std::string num, std::string firstName, std::string lastName, 
+                 std::string nickName, std::string darkSecret)
+    : id(idx), nbr(num), Fname(firstName), Lname(lastName), Nname(nickName), Dsecret(darkSecret) {}
+
+
 int Contact::getId() const { return id; }
 
 std::string Contact::getNumber() const { return nbr; }

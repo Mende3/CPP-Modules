@@ -17,6 +17,17 @@ void SEARCHaction (PhoneBook &pb);
 
 int IsEmpty (std::string subject)
 {
+    if (isspace(subject[0]))
+    {
+        for (size_t i = 1; i < subject.length(); i++)
+        {
+            if (subject[i] != '\0' && !isspace(subject[i]))
+                return 0;
+        }
+        std::cout << "\033[31m\nOs campos não podem ficar vazios!\n\033[0m" << std::endl;
+        return 1;
+    }
+
 	if (subject.length() == 0)
 	{
 		std::cout << "\033[31m\nOs campos não podem ficar vazios!\n\033[0m" << std::endl;

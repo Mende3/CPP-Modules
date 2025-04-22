@@ -29,10 +29,9 @@ class Contact
 
     public:
     
-    Contact() : id(0), nbr(""), Fname(""), Lname(""), Nname(""), Dsecret("") {}
-
-    Contact(int idx, std::string num, std::string firstName, std::string lastName, std::string nickName, std::string darkSecret)
-    :  id(idx), nbr(num), Fname(firstName), Lname(lastName), Nname(nickName), Dsecret(darkSecret) {}
+    Contact();
+    Contact(int idx, std::string num, std::string firstName, std::string lastName, 
+            std::string nickName, std::string darkSecret);
 
     int getId() const;
     std::string getNumber() const;
