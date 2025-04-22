@@ -22,7 +22,7 @@ Aqui você encontrará diversos exercícios propostos durante o aprendizado, org
 ## 📂 Estrutura do Repositório
 
 ```
-📁 MODULES CPP/
+📁 CPP-Modules/
  ┣ 📁 CPP-Module-00/
  ┣ 📁 CPP-Module-01/
  ┣ 📁 CPP-Module-02/
