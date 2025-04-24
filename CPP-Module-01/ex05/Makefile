@@ -1,5 +1,6 @@
 NAME = harl2.0
-SRC = main.cpp
+SRC = main.cpp \
+		Harl.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra
