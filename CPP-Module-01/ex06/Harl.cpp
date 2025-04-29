@@ -72,7 +72,7 @@ void Harl::complain ( std::string level )
             // fall through
         case 2:
             (this->*functions[2])();
-            // fall through
+            //fall through
         case 3:
             (this->*functions[3])();
             break;

@@ -3,7 +3,7 @@ SRC = main.cpp \
 		Harl.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 CYAN = \033[1;36m
 RESET = \033[0m
