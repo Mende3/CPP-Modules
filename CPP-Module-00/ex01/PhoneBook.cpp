@@ -12,6 +12,10 @@
 
 #include "PhoneBook.hpp"
 
+const int PhoneBook::maxSize = 8;
+
+PhoneBook::PhoneBook() : contactCount(0), index(0) {}
+
 void PhoneBook::addContact(std::string num, std::string firstName, std::string lastName, std::string nickName, std::string darkSecret)
 {    
     if (index == 8)

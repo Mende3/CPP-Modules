@@ -22,13 +22,13 @@
 class PhoneBook
 {
     private:
-        static const int maxSize = 8;
+        static const int maxSize;
         int contactCount;
         int index;
-        Contact contacts[maxSize];
+        Contact contacts[8];
 
     public:
-        PhoneBook() : contactCount(0), index(0) {}
+        PhoneBook();
 
         void ShowAll ();
         void showTable (int i);
