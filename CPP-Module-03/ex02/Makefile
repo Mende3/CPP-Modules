@@ -1,7 +1,8 @@
-NAME = serena
+NAME = repetitive_work
 SRC = main.cpp			\
 		ClapTrap.cpp	\
-		ScavTrap.cpp
+		ScavTrap.cpp	\
+		FragTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -13,7 +14,7 @@ $(NAME) : $(OBJ)
 	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o : %.cpp
-	@echo "Compilando $<"
+	@echo "Compilando $<..."
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean :

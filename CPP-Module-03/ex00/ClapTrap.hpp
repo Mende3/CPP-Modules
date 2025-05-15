@@ -12,10 +12,10 @@ class ClapTrap
         int _AttackDamage;
 
     public :
-        ClapTrap ();
         ClapTrap (std::string name);
+        ClapTrap (const ClapTrap& other);
         // sobrecarga
-        ClapTrap& operator=(const ClapTrap& copy);
+        ClapTrap& operator=(const ClapTrap& other);
         ~ClapTrap ();
 
 
@@ -30,10 +30,8 @@ class ClapTrap
         int getEnergyPoints () const;
         int getAttackDamage () const;
 
-        void setName ( std::string name );
         void setHitPoints ( int amount );
         void setEnergyPoints ( int amount );
-        void setAttackDamage ( int amount );
 };
 
 
