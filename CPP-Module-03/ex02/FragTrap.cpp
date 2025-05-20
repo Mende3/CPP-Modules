@@ -1,8 +1,18 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap (std::string name) : ClapTrap (name)
+
+FragTrap::FragTrap () : ClapTrap ()
 {
     std::cout << "[FragTrap] constructor padrão chamado"<<std::endl;
+    _HitPoints = 100;
+    _EnergyPoints = 100;
+    _AttackDamage = 30;
+}
+
+
+FragTrap::FragTrap (std::string name) : ClapTrap (name)
+{
+    std::cout << "[FragTrap] constructor chamado"<<std::endl;
     _HitPoints = 100;
     _EnergyPoints = 100;
     _AttackDamage = 30;

@@ -11,4 +11,5 @@ int main()
 
   ScavTrap scav2 = scav1;
   std::cout<<scav2.getName()<<std::endl;
+  scav2.guardGate ();
 }

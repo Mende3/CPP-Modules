@@ -28,7 +28,8 @@ int main ()
         std::cout <<"apenas números são aceites"<<std::endl;
         return 0;
     }
-    nbr = stoi(input);
+    std::istringstream iss(input);
+    iss >> nbr;
     if (nbr <= 0)
     {
         std::cout <<"o argumento deve ser maior que 0"<<std::endl;

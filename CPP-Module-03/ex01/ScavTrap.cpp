@@ -1,8 +1,16 @@
 #include  "ScavTrap.hpp"
 
+ScavTrap::ScavTrap () : ClapTrap()
+{
+    std::cout<<"[ScavTrap] Constructor Padrão chamado"<<std::endl;
+    _HitPoints = 100;
+    _EnergyPoints = 50;
+    _AttackDamage = 20;
+}
+
 ScavTrap::ScavTrap (std::string name) : ClapTrap(name)
 {
-    std::cout<<"[ScavTrap] Constructor padrão chamado"<<std::endl;
+    std::cout<<"[ScavTrap] Constructor chamado"<<std::endl;
     _HitPoints = 100;
     _EnergyPoints = 50;
     _AttackDamage = 20;
