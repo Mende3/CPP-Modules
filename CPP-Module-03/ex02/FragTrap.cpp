@@ -1,21 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mefranci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/21 11:52:15 by mefranci          #+#    #+#             */
+/*   Updated: 2025/05/21 11:52:16 by mefranci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "FragTrap.hpp"
 
 
 FragTrap::FragTrap () : ClapTrap ()
 {
     std::cout << "[FragTrap] constructor padrão chamado"<<std::endl;
-    _HitPoints = 100;
-    _EnergyPoints = 100;
-    _AttackDamage = 30;
+    _hitPoints = 100;
+    _energyPoints = 100;
+    _attackDamage = 30;
 }
 
 
 FragTrap::FragTrap (std::string name) : ClapTrap (name)
 {
     std::cout << "[FragTrap] constructor chamado"<<std::endl;
-    _HitPoints = 100;
-    _EnergyPoints = 100;
-    _AttackDamage = 30;
+    _hitPoints = 100;
+    _energyPoints = 100;
+    _attackDamage = 30;
 }
 
 FragTrap::FragTrap (const FragTrap &other) : ClapTrap (other)
@@ -27,10 +39,7 @@ FragTrap& FragTrap::operator=(const FragTrap &other)
 {
     if (this == &other)
         return *this;
-    _Name = this->getName();
-    _HitPoints = this->getHitPoints();
-    _EnergyPoints = this->getEnergyPoints();
-    _AttackDamage = this->getAttackDamage();
+    ClapTrap::operator=(other);
     return *this;   
 }
 
@@ -42,5 +51,5 @@ FragTrap::~FragTrap ()
 
 void FragTrap::highFivesGuys( void )
 {
-    std::cout<<"[FragTrap] Olá pessoal, eu sou o "<<getName()<<" desejo pra vocês um dia positivo."<<std::endl;
+    std::cout<<"[FragTrap] Olá pessoal, eu sou o "<<_name<<" desejo pra vocês um dia positivo."<<std::endl;
 }

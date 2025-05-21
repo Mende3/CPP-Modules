@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mefranci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/21 11:48:43 by mefranci          #+#    #+#             */
+/*   Updated: 2025/05/21 11:48:45 by mefranci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "ClapTrap.hpp"
 
@@ -11,14 +23,10 @@ int main (void)
     a.attack ("Amilton");
     a.takeDamage (2);
     a.beRepaired (1);
-    a.setEnergyPoints (1);
     a.attack ("Amilton");
-    a.getEnergyPoints();
-    a.getHitPoints();
     a.attack ("Clear");
     std::cout<<std::endl;
 
-    b.setEnergyPoints (0);
     b.attack ("Fer");
     std::cout<<std::endl;
     

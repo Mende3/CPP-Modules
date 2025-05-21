@@ -1,18 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mefranci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/21 11:48:06 by mefranci          #+#    #+#             */
+/*   Updated: 2025/05/21 11:48:17 by mefranci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap ()
 {
-    this->_HitPoints = 10;
-    this->_EnergyPoints = 10;
-    this->_AttackDamage = 0;
+    this->_hitPoints = 10;
+    this->_energyPoints = 10;
+    this->_attackDamage = 0;
     std::cout <<"[ClapTrap] constructor padrão chamado" << std::endl;
 }
 
-ClapTrap::ClapTrap (std::string name) : _Name(name) 
+ClapTrap::ClapTrap (std::string name) : _name(name) 
 {
-    this->_HitPoints = 10;
-    this->_EnergyPoints = 10;
-    this->_AttackDamage = 0;
+    this->_hitPoints = 10;
+    this->_energyPoints = 10;
+    this->_attackDamage = 0;
     std::cout <<"[ClapTrap] constructor chamado" << std::endl;
 }
 
@@ -30,60 +42,45 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
     std::cout <<"[ClapTrap] operador de cópia chamado" << std::endl;
     if (this == &other)
         return *this;
-    this->_Name = other.getName();
-    this->_HitPoints = other.getHitPoints();
-    this->_EnergyPoints = other.getEnergyPoints();
-    this->_AttackDamage = other.getAttackDamage();
+    this->_name = other._name;
+    this->_hitPoints = other._hitPoints;
+    this->_energyPoints = other._energyPoints;
+    this->_attackDamage = other._attackDamage;
     return *this;
 }
 
 
 void ClapTrap::attack (const std::string& target)
 {
-    if (_HitPoints <= 0 || _EnergyPoints <= 0)
+    if (_hitPoints <= 0 || _energyPoints <= 0)
     {
-        std::cout <<"[ClapTrap] "<<_Name<<" não pode efetuar ataques. hitPoints: "<<_HitPoints<<", EnergyPoints: "<<_EnergyPoints<<std::endl;
+        std::cout <<"[ClapTrap] "<<_name<<" não pode efetuar ataques. hitPoints: "<<_hitPoints<<", EnergyPoints: "<<_energyPoints<<std::endl;
         return;
     }
-    _EnergyPoints--;
-    std::cout <<"[ClapTrap] "<<_Name<<" atacou "<<target<<" descontando "<<_AttackDamage<<" de dano. EnergyPoints: "<<_EnergyPoints<<std::endl;
+    _energyPoints--;
+    std::cout <<"[ClapTrap] "<<_name<<" atacou "<<target<<" descontando "<<_attackDamage<<" de dano. EnergyPoints: "<<_energyPoints<<std::endl;
 }
 void ClapTrap::takeDamage (unsigned int amount)
 {
-    if (_HitPoints < 1)
+    if (_hitPoints < 1)
     {
-        std::cout<<"[ClapTrap] "<<_Name<<" já está com 0 de vida"<<std::endl;
+        std::cout<<"[ClapTrap] "<<_name<<" já está com 0 de vida"<<std::endl;
         return;
     }
-    _HitPoints -= amount;
-    if (_HitPoints < 0)
-        _HitPoints = 0;
-    std::cout<<"[ClapTrap] "<<_Name<<" tomou "<<amount<<" de danos. HitPoints: "<<_HitPoints<<std::endl;
+    _hitPoints -= amount;
+    if (_hitPoints < 0)
+        _hitPoints = 0;
+    std::cout<<"[ClapTrap] "<<_name<<" tomou "<<amount<<" de danos. HitPoints: "<<_hitPoints<<std::endl;
 }
 void ClapTrap::beRepaired (unsigned int amount)
 {
-    if (_HitPoints <= 0 || _EnergyPoints <= 0)
+    if (_hitPoints <= 0 || _energyPoints <= 0)
     {
-        std::cout <<"[ClapTrap] "<<_Name<<" não pode recuperar se. hitPoints: "<<_HitPoints<<", EnergyPoints: "<<_EnergyPoints<<std::endl;
+        std::cout <<"[ClapTrap] "<<_name<<" não pode recuperar se. hitPoints: "<<_hitPoints<<", EnergyPoints: "<<_energyPoints<<std::endl;
         return;
     }
-    _EnergyPoints--;
-    _HitPoints += amount;
-    std::cout <<"[ClapTrap] "<<_Name<<" recuperou "<<amount<<" de vida. HitPoint: "<<_HitPoints<<", EnergyPoints: "<<_EnergyPoints<<std::endl;
+    _energyPoints--;
+    _hitPoints += amount;
+    std::cout <<"[ClapTrap] "<<_name<<" recuperou "<<amount<<" de vida. HitPoint: "<<_hitPoints<<", EnergyPoints: "<<_energyPoints<<std::endl;
 }
 
-std::string ClapTrap::getName () const { return _Name; }
-int ClapTrap::getHitPoints () const { return _HitPoints; }
-int ClapTrap::getEnergyPoints () const { return _EnergyPoints; }
-int ClapTrap::getAttackDamage () const { return _AttackDamage; }
-
-void ClapTrap::setHitPoints ( int amount )
-{
-    this->_HitPoints = amount;
-    std::cout<<"[ClapTrap] "<<_Name<<" redefiniu HitPoints: "<<amount<<std::endl;
-}
-void ClapTrap::setEnergyPoints ( int amount )
-{
-    this->_EnergyPoints = amount;
-    std::cout<<"[ClapTrap] "<<_Name<<" redefiniu EnergyPoints: "<<amount<<std::endl;
-}
