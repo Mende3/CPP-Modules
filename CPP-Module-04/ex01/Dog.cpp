@@ -1,8 +1,9 @@
-# include "inc/Dog.hpp"
+#include "inc/Dog.hpp"
 
 Dog::Dog () : Animal ()
 {
-    this->_type = "cão";
+    this->_type = "Dog";
+    this->ideas = new Brain();
     std::cout<<"[Dog] construtor chamado"<<std::endl;
 }
 
@@ -23,10 +24,16 @@ Dog& Dog::operator=(const Dog& other)
 
 Dog::~Dog()
 {
+    ideas->getIdea(_type);
+    delete ideas;
     std::cout<<"[Dog] destrutor chamado"<<std::endl;
 }
 
 void Dog::makeSound () const
 {
     std::cout<<"Eu sou um "<<_type<<" rufff!"<<std::endl;
+}
+Brain Dog::getIdea () const
+{
+    return *ideas;
 }

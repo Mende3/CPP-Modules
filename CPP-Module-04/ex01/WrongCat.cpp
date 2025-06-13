@@ -1,4 +1,4 @@
-# include "inc/WrongCat.hpp"
+#include "inc/WrongCat.hpp"
 
 WrongCat::WrongCat ()
 {    

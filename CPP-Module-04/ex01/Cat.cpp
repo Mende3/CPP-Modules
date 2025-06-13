@@ -1,8 +1,9 @@
-# include "inc/Cat.hpp"
+#include "inc/Cat.hpp"
 
 Cat::Cat ()
-{    
-    this->_type = "gato";
+{
+    this->_type = "Cat";
+    this->ideas = new Brain;
     std::cout<<"[Cat] construtor chamado"<<std::endl;
 }
 
@@ -22,6 +23,8 @@ Cat& Cat::operator=(const Cat& other)
 }
 Cat::~Cat ()
 {
+    ideas->getIdea(_type);
+    delete ideas;
     std::cout<<"[Cat] destrutor chamado"<<std::endl;
 }
 

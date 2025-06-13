@@ -1,4 +1,4 @@
-# include "inc/Animal.hpp"
+#include "inc/Animal.hpp"
 
 Animal::Animal ()
 {
